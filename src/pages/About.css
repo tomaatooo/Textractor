@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.team .member{
+    position: relative;
+    padding: 30px;
+    box-shadow: 0px 2px 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    background: #fff;
+}
+
+.team .member .teampic{
+    overflow: hidden;
+    width:180px;
+    border-radius: 50%;
+}
+
+.team .member .member-info{
+    padding-left: 30px;
+}
+
+.team .member h4{
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color:  rgb(36, 191, 223);
+}
+
+.team .member span{
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+    text-align: left;
+}
+
+.team .member span::after{
+    content:"";
+    position:absolute;
+    display: block;
+    width: 50px;
+    height:2px;
+    background: black;
+    bottom: 0;
+    left:0;
+}
+
+.team .member p{
+    margin: 10px 0 0 0;
+    font-size: 14px;
+}
+
+.team .member .social{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team .member .social a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background:#eff2f8;
+}
+
+.team .member .social a i{
+    color: rgb(36, 191, 223);
+    font-size: 16px;
+    margin: 0 2px;
+}
+
+.team .member .social a:hover{
+    background: rgb(36, 191, 223);
+}
+
+.team .member .social a:hover i{
+    color: white;
+}
+
+.team .member .social a+a{
+    margin-left: 8px;
+}
+
+section{
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-title{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.underline{
+    width:150px;
+    height:2px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: -30px;
+}
+
+.section-title h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color:rgb(255, 255, 255);
+}
+
+.section-title p{
+    margin-top: 20px;
+}
+
+.about-about{
+    background-color: rgb(156, 156, 228);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20vh;
+}
+
+.about-about h3{
+    text-align: center;
+    font-weight: 800;
+    color: #fff;
+    }
+
+.about-about p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    text-align: justify;
+  
+}

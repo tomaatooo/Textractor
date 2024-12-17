@@ -1,0 +1,31 @@
+.wrapper{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+
+}
+
+#container{
+    position: absolute;
+}
+
+
+.close-btn{
+    top: 10px;
+    right: 10px;
+}
+
+.container-popup img{
+    position: relative;
+    width: 50%;
+    aspect-ratio: 4/3;
+    object-fit: contain; 
+     
+}
+
+.img-cover{
+   text-align: center;
+}

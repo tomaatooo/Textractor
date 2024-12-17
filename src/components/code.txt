@@ -1,0 +1,38 @@
+{
+            loading === true && aiResponse === '' ? (
+        <p style={{ margin: '30px 0' }}><img src={load} style={{height:"150px"}} /></p>
+    ) : (
+        <div style={{ margin: '30px 0' }}>
+            <p id="output">{aiResponse}</p>
+            
+            {aiResponse !== '' && (
+                <button
+                    id="play"
+                    style={{ height: "40px", borderRadius: "5px", width: "100px", display: "flex", justifyContent: "center", alignItems: "center" }}
+                    onClick={() => {
+                        if (play === false && newPlay === true) {
+                            setPlay(false);
+                            setNewPlay(false);
+                            speechSynthesis.cancel();
+                            let speech = new SpeechSynthesisUtterance();
+                            speech.text = aiResponse;
+                            console.log(speech.text);
+                            speechSynthesis.speak(speech);
+                            setPlay(true);
+                        }
+                        if (play === true) {
+                            speechSynthesis.pause();
+                            setPlay(false);
+                            console.log("pause");
+                        } else {
+                            speechSynthesis.resume();
+                            setPlay(true);
+                            console.log("play");
+                        }
+                    }}>
+                    Play/Pause
+                    </button>
+                    )}
+                </div>
+                )
+            }

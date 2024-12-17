@@ -1,0 +1,115 @@
+
+
+.container-home h2{
+    font-family:sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 800;
+}
+
+.container-home p{
+    text-align: center;
+    font-size: 1rem;
+    background-color: rgb(123, 129, 241);
+    color: white;
+}
+
+.home-container-main{
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.hc{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    width: 800px;
+}
+
+.h-banner{
+    margin-top:60px;
+    margin-bottom: 30px;
+    background-color: #4b2a71;
+    color: #4b2a71;
+    height: 200px;
+    position: relative;
+    bottom: -130px;
+}
+
+.h-banner2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgb(123, 129, 241);
+    color: black;
+    height: 200px;
+    position: relative;
+    top:-100px;
+    transform: rotate(1deg);
+    display: flex;
+    transition: background-color 0.5s,color 0.5s, transform 0.5s;
+    align-items: center;
+}
+
+.h-banner2 #h-h,#h-p{
+    margin-left: 100px;
+}
+
+.h-banner2 .btn-0{
+    margin-left: 50px;
+}
+
+.h-banner2:hover{
+    background-color: black;
+    color: white;
+    transform: translate(1.1);
+    transform: rotate(-1deg);
+}
+
+.btn-0 a{
+    background-color: rgb(241, 51, 51);
+    padding: 5px;
+    margin-right: 80px;
+    font-size: 1rem;
+}
+
+.h-banner3{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: #4b2a71;
+    color: white;
+    height: 60vh;
+    bottom: -130px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    border-radius: 5px;
+   justify-content: center;
+   
+   
+}
+
+.how-to ul{
+    display: block;
+    justify-content:space-between;
+    margin-right: 30px;
+}
+
+.how-to{
+    display: flex;
+   
+}
+
+.how-to ul li{
+    color:black;
+    background-color: rgb(140, 186, 233);
+    width: 50vw;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: larger;
+    
+}

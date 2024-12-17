@@ -1,0 +1,32 @@
+
+
+label{
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    background:rgb(197, 46, 71);
+    padding: 20px 40px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 5px 15px 25px rgba(0, 0, 0,0.35);
+    border-radius: 6px;
+}
+
+label:hover{
+    background:rgb(140, 25, 41);
+}
+
+input[type="file"]{
+    display: none;
+}
+
+label i{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+label:active{
+    transform: scale(0.9);
+}
