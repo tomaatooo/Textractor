@@ -1,5 +1,6 @@
 import './Home.css';
 import Banner from '../components/Banner'
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -38,7 +39,7 @@ const Home = () => {
       </div>
       <div className='btn-0'>
         
-      <a href="./docreader" style={{textWrap:"nowrap"}}>Try Now </a>
+      <Link to="/docreader" style={{textWrap:"nowrap"}}>Try Now </Link>
       </div>
     </div>
 
