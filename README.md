@@ -63,3 +63,7 @@ Push your branch to the repository:
 git push origin featurefeature-name
 ```
 
+### **5. Using API Key**
+
+Add your Gemini API Key in src/components/AiWithImage and src/components/AiWithText
+
