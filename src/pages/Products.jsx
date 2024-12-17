@@ -16,7 +16,7 @@ const Products = () => {
           <span title="Only english is supported" style={{fontSize:"10px",color:"white",backgroundColor:"#000",padding:"2px",marginLeft:"4px",cursor:"help"}}>EN</span>
         </h3>
         <p>Having a hard time reading or copying from images? Use the tool and the work will be done in seconds.</p>
-        <a href="/docreader" class="btn">Try Out</a>
+        <Link to="/docreader" class="btn">Try Out</Link>
         </div>
       </div>
       <div className="body-1" >
@@ -27,7 +27,7 @@ const Products = () => {
         <div className="content">
         <h3>Prescription Reader</h3>
         <p>Want to order your medicines but cannot read what the doctor wrote? We got it covered.</p>
-        <a href="/preader" class="btn">Try Out</a>
+        <Link to="/preader" class="btn">Try Out</Link>
         </div>
       </div>
     </div>
