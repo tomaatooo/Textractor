@@ -6,7 +6,7 @@ import Popup from './Popup';
 
 
 const AiwithImage = () => {
-    const genAI = new GoogleGenerativeAI('AIzaSyBwF4HEhvpBAfINN0zPphKrPSZ_V3Xi1Kg');
+    const genAI = new GoogleGenerativeAI('API_KEY');
     const load='/loading.gif'
     const [image, setImage] = useState('');
     const [imageInineData, setImageInlineData] = useState('');
