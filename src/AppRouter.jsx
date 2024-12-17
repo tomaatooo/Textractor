@@ -27,9 +27,8 @@ const AppRouter = () => {
 
       <div className='container'>
         <Routes>
-          <Route path='preader' element={<Preader/>}/>
-          <Route path='docreader' element={<Docreader/>}/>
-
+          <Route path='/preader' element={<Preader/>}/>
+          <Route path='/docreader' element={<Docreader/>}/>
           <Route path='/*' element={<Error/>}/>
           {
             routes.map((route) => {
