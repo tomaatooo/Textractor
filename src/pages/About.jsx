@@ -24,11 +24,11 @@ const About = () => {
         <div className="row">
         <TitleCard dp="pic1.jpg" name="Aayush Das" role="Frontend" desc="I am Lonely" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
 
-        <TitleCard dp="default.jpg" name="Aiswanik Dhar" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
+        <TitleCard dp="pic2.jpeg" name="Aiswanik Dhar" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
 
-        <TitleCard dp="default.jpg" name="Md Kaif Raza" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
+        <TitleCard dp="pic3.jpeg" name="Md Kaif Raza" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
         
-        <TitleCard dp="default.jpg" name="Parichay Sengupta" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
+        <TitleCard dp="pic4.jpeg" name="Parichay Sengupta" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
           
         
         </div>
