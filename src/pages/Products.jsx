@@ -10,7 +10,7 @@ const Products = () => {
     </div>
     <div className='body-container'>
       <div className="body-1" >
-        <img src="cover.jpg"/>
+        <img src="docreader.jpg"/>
         <div className='over' style={{top:"-400px"}}>.</div>
         <div className="content" >
         <h3 style={{display:"flex",alignItems:"center"}}>Text from Image
@@ -21,7 +21,7 @@ const Products = () => {
         </div>
       </div>
       <div className="body-1" >
-      <img src="cover.jpg"/>
+      <img src="preader.jpg"/>
 
       <div className='over'>New!</div>
       

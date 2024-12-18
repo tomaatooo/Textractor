@@ -32,18 +32,19 @@ const Home = () => {
     <div className="h-banner">
       one
     </div>
-    <div className="h-banner2">
+    <div className="h-banner2" style={{flexWrap:"wrap"}}>
       <div>
       <h3 id="h-h">Extract text from images effortlessly</h3>
       <p id="h-p">Easily convert text from images into editable and searchable format</p>
       </div>
-      <div className='btn-0'>
+      <div className='btn-0' style={{display:"flex"
+      }}>
         
-      <Link to="/docreader" style={{textWrap:"nowrap"}}>Try Now </Link>
+      <Link to="/docreader" >Try Now </Link>
       </div>
     </div>
-
     </div>
+    
     <h3 style={{fontSize: "42px",
     fontWeight: "800",
     fontFamily:"sans-serif",
@@ -51,6 +52,8 @@ const Home = () => {
     marginTop: "30px",
     color: "white"
     }} >How to Use?</h3>
+
+    
     <div className="h-banner3" style={{alignContent:"center"}}>
 
       <video style={{marginTop:"20px"}} width="auto" height="180vh" controls>
