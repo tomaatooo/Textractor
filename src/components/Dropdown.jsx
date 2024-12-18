@@ -3,16 +3,17 @@ import { useState } from 'react'
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import Button from 'react-bootstrap/Button';
 
-const Dropdown = ({textToTranslate}) => {
+const Dropdown = ({textToTranslate,translate}) => {
     const [dvalue,setDvalue]=useState('Choose language')
     const options=[
-        {label:"Choose language",value:0},
-        {label:"Hindi", value:1},
-        {label:"Bengali",value:2}
+        {label:"Choose language",value:'Choose language'},
+        {label:"Hindi", value:'hindi'},
+        {label:"Bengali",value:'bengali'}
     ]
 
 function handleSelect(event){
-    setDvalue(event.target.label)
+    setDvalue(event.target.value)
+    console.log(dvalue)
 }
 
         const [translated, setTranslated] = useState('');
@@ -21,11 +22,11 @@ function handleSelect(event){
 
         async function Translate() {
                 const model3 = genAI.getGenerativeModel({ model: "gemini-pro" });
-                const prompt = `Translate ${textToTranslate} to Hindi`;
+                const prompt = `Translate ${textToTranslate} to ${dvalue}`;
                 const result = await model3.generateContent(prompt);
                 const response = await result.response;
                 const text = response.text();
-                console.log(text)
+                translate(text)
         }
 
   return (

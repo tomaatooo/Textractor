@@ -29,11 +29,12 @@ function Popup(props) {
         <br/>
         <br/>
         <p>{props.response}</p>
-        <p>{props.contact}</p>
+        {translated==''?'':<p style={{backgroundColor:"#ADD8E6",padding:"4px"}}>{translated}</p>}
+        
         </Modal.Body>
 
         <Modal.Footer>
-          {props.response==''?<Button variant="primary"  onClick={props.action} >Extract</Button>:<Dropdown textToTranslate={props.response}/>}
+          {props.response==''?<Button variant="primary"  onClick={props.action} >Extract</Button>:<Dropdown textToTranslate={props.response} translate={setTranslated}/>}
           
           
         </Modal.Footer>
