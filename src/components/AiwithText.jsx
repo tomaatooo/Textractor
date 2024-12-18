@@ -10,8 +10,7 @@ const AiwithImage = () => {
     const load='/loading.gif'
     const [image, setImage] = useState('');
     const [imageInineData, setImageInlineData] = useState('');
-    const [aiResponse, setResponse] = useState('');
-    const [contact,setContact]=useState('');
+    const [aiResponse, setResponse] = useState('')
     const [loading, setLoading] = useState(false);
     const [play,setPlay]=useState(false);
     const [newPlay,setNewPlay]=useState(false)
@@ -46,7 +45,7 @@ const AiwithImage = () => {
         getBase64(file)
             .then((result) => {
                 setPlay(false)
-                console.log(image);
+                
                 setImage(result);
                 setPopup(true);
             })
@@ -88,7 +87,7 @@ const AiwithImage = () => {
                 </div>
                 
                 {  
-                   popup===true ? <Popup image={image} trigger={setPopup} action={handleClick} response={aiResponse} contact={contact}></Popup>:""
+                   popup===true ? <Popup image={image} trigger={setPopup} action={handleClick} response={aiResponse}></Popup>:""
                    
                 }
                 

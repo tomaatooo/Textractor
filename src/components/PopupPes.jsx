@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import './Popup.css'
-import Dropdown from './Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
 function Popup(props) {
-
-  const [translated,setTranslated]=useState('');
 
   return (
     <>
@@ -29,13 +26,11 @@ function Popup(props) {
         <br/>
         <br/>
         <p>{props.response}</p>
-        <p>{props.contact}</p>
+        <b><p>{props.contact}</p></b>
         </Modal.Body>
 
         <Modal.Footer>
-          {props.response==''?<Button variant="primary"  onClick={props.action} >Extract</Button>:<Dropdown textToTranslate={props.response}/>}
-          
-          
+        <Button variant="primary"  onClick={props.action} >Extract</Button>          
         </Modal.Footer>
       </Modal.Dialog>
     </div>

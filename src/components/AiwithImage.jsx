@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getBase64 } from '../helpers/imageHelper';
 import './main.css';
-import Popup from './Popup';
+import PopupPes from './PopupPes';
 
 
 const AiwithImage = () => {
@@ -97,7 +97,7 @@ const AiwithImage = () => {
                 </div>
                 
                 {  
-                   popup===true ? <Popup image={image} trigger={setPopup} action={handleClick} response={aiResponse} contact={contact}></Popup>:""
+                   popup===true ? <PopupPes image={image} trigger={setPopup} action={handleClick} response={aiResponse} contact={contact}></PopupPes>:""
                    
                 }
                 
