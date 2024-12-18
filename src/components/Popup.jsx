@@ -9,6 +9,7 @@ import Modal from 'react-bootstrap/Modal';
 function Popup(props) {
 
   const [translated,setTranslated]=useState('');
+  const [show,setShow]=useState('');
 
   return (
     <>
@@ -23,18 +24,20 @@ function Popup(props) {
         </Modal.Header>
 
         <Modal.Body>
-          <div className='img-cover'>
+          <div className='img-cover' style={{display:`${show}`}}>
           <img src={props.image} style={{position: "relative",width: "50%"}}/>
           </div>
         <br/>
         <br/>
-        <p>{props.response}</p>
+        <p>{props.waiting?<img style={{width:"20px"}} src="loading.gif"/>:props.response}</p>
         {translated==''?'':<p style={{backgroundColor:"#ADD8E6",padding:"4px"}}>{translated}</p>}
         
         </Modal.Body>
-
+{
+  console.log(show)
+}
         <Modal.Footer>
-          {props.response==''?<Button variant="primary"  onClick={props.action} >Extract</Button>:<Dropdown textToTranslate={props.response} translate={setTranslated}/>}
+          {props.response==''?<Button variant="primary" disabled={props.waiting} onClick={props.action} >Extract</Button>:<Dropdown textToTranslate={props.response} visible={setShow} translate={setTranslated}/>}
           
           
         </Modal.Footer>

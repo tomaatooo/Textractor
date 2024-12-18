@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import Button from 'react-bootstrap/Button';
 
-const Dropdown = ({textToTranslate,translate}) => {
+const Dropdown = ({textToTranslate,translate,visible}) => {
     const [dvalue,setDvalue]=useState('Choose language')
     const options=[
         {label:"Choose language",value:'Choose language'},
@@ -11,9 +11,13 @@ const Dropdown = ({textToTranslate,translate}) => {
         {label:"Bengali",value:'bengali'}
     ]
 
+function click(){
+    visible('none')
+    Translate()
+}
+
 function handleSelect(event){
     setDvalue(event.target.value)
-    console.log(dvalue)
 }
 
         const [translated, setTranslated] = useState('');
@@ -27,6 +31,7 @@ function handleSelect(event){
                 const response = await result.response;
                 const text = response.text();
                 translate(text)
+                console.log(text)
         }
 
   return (
@@ -36,7 +41,7 @@ function handleSelect(event){
             <option value={option.value}>{option.label}</option>
         ))}
         </select>
-        <Button disabled={dvalue=='Choose language'} variant='primary' onClick={Translate}>Translate</Button>
+        <Button disabled={dvalue=='Choose language'} variant='primary' onClick={click}>Translate</Button>
        
     </div>
   )

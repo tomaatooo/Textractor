@@ -87,7 +87,7 @@ const AiwithImage = () => {
                 </div>
                 
                 {  
-                   popup===true ? <Popup image={image} trigger={setPopup} action={handleClick} response={aiResponse}></Popup>:""
+                   popup===true ? <Popup image={image} trigger={setPopup} action={handleClick} waiting={loading} response={aiResponse}></Popup>:""
                    
                 }
                 
