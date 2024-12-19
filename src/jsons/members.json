@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "image":"pic1.jpg",
+        "name":"Aayush Das",
+        "role":"Frontend",
+        "mail":"mailto:twenty12aayush@gmail.com",
+        "git":"https://www.github.com/tomaatooo",
+        "linkedin":"https://www.linkedin.com/in/iuss/"
+    },
+    {
+        "id":2,
+        "image":"pic2.jpeg",
+        "name":"Aiswanik Dhar",
+        "role":"Frontend",
+        "mail":"mailto:aiswanikdhar@gmail.com",
+        "git":"https://github.com/aiswanik",
+        "linkedin":"https://www.linkedin.com/in/aiswanik-dhar-60b792218/"
+    },
+    {
+        "id":3,
+        "image":"pic3.jpeg",
+        "name":"Md Kaif Raza",
+        "role":"styling",
+        "mail":"mailto:razakaif474@gmail.com",
+        "git":"",
+        "linkedin":" www.linkedin.com/in/kaif-raza-728034222"
+    },
+    {
+        "id":4,
+        "image":"pic4.jpeg",
+        "name":"Parichay Sengupta",
+        "role":"API Integration",
+        "mail":"mailto:parichaysengupta@gmail.com",
+        "git":"https://github.com/Parichay02",
+        "linkedin":"https://www.linkedin.com/in/parichay-sengupta-043162272?"
+    }
+]

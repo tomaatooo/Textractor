@@ -12,7 +12,6 @@ const TitleCard = ({dp,name,role,desc,email,linkedin,github}) => {
               <div className="member-info">
                 <h4>{name}</h4>
                 <span>{role}</span>
-                <p>{desc}</p>
               
               <div className="social">
                 <a href={email} target='_black'><i class="fa-solid fa-envelope"></i></a>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 import TitleCard from '../components/TitleCard'
+import members from "../jsons/members.json"
 
 const About = () => {
   return (
@@ -22,14 +23,13 @@ const About = () => {
           <p style={{color:"white"}}>Meet the developers of Textractor</p>
         </div>
         <div className="row">
-        <TitleCard dp="pic1.jpg" name="Aayush Das" role="Frontend" desc="I am Lonely" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
-
-        <TitleCard dp="pic2.jpeg" name="Aiswanik Dhar" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
-
-        <TitleCard dp="pic3.jpeg" name="Md Kaif Raza" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
-        
-        <TitleCard dp="pic4.jpeg" name="Parichay Sengupta" role="title" desc="" email="mailto:twenty12aayush@gmail.com" linkedin="https://www.linkedin.com/in/iuss/" github="https://www.github.com/tomaatooo"/>
-          
+        {
+          members.map(member=>{
+            return(
+              <TitleCard dp={member.image} name={member.name} role={member.role} desc={member.about} email={member.mail} linkedin={member.linkedin} github={member.git}/>
+            )
+          })
+        }
         
         </div>
       </div>

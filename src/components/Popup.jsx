@@ -34,10 +34,10 @@ function Popup(props) {
         
         </Modal.Body>
 {
-  console.log(show)
+  console.log(props.response)
 }
         <Modal.Footer>
-          {props.response==''?<Button variant="primary" disabled={props.waiting} onClick={props.action} >Extract</Button>:<Dropdown textToTranslate={props.response} visible={setShow} translate={setTranslated}/>}
+          {props.response==''?<Button variant="primary" disabled={props.waiting} onClick={props.action} >Extract</Button>:props.response==='OOPS, NO TEXT DETECTED'?<Button variant="primary" disabled="true" >Extract</Button>:<Dropdown textToTranslate={props.response} visible={setShow} translate={setTranslated}/>}
           
           
         </Modal.Footer>

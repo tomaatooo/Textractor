@@ -10,7 +10,7 @@ const AiwithImage = () => {
     const load='/loading.gif'
     const [image, setImage] = useState('');
     const [imageInineData, setImageInlineData] = useState('');
-    const [aiResponse, setResponse] = useState('')
+    const [aiResponse, setResponse] = useState('Cannot Read, Sorry')
     const [loading, setLoading] = useState(false);
     const [play,setPlay]=useState(false);
     const [newPlay,setNewPlay]=useState(false)
@@ -22,12 +22,13 @@ const AiwithImage = () => {
         setResponse('');
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         const result = await model.generateContent([
-            "If the text in the image is in english, extract the text else return 'Cannot Read, Sorry' ", imageInineData
+            "If the text in the image is in english, extract the text else return 'OOPS, NO TEXT DETECTED' ", imageInineData
         ]);
         const response = await result.response;
         const text = response.text();
         setResponse(text);
         setLoading(false);
+        console.log(imageInineData)
     }
 
 
@@ -71,6 +72,7 @@ const AiwithImage = () => {
     }
 
     return (
+       
         <div>
             <div>
                 <div id="matter" style={{ display: 'flex',justifyContent:'center' }}>
@@ -85,9 +87,9 @@ const AiwithImage = () => {
                 <div style={{textAlign:"center"}}>
                 
                 </div>
+                {
                 
-                {  
-                   popup===true ? <Popup image={image} trigger={setPopup} action={handleClick} waiting={loading} response={aiResponse}></Popup>:""
+                   popup? <Popup image={image} trigger={setPopup} action={handleClick} waiting={loading} response={aiResponse}></Popup>:""
                    
                 }
                 

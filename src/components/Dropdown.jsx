@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 const Dropdown = ({textToTranslate,translate,visible}) => {
     const [dvalue,setDvalue]=useState('Choose language')
+
     const options=[
         {label:"Choose language",value:'Choose language'},
         {label:"Hindi", value:'hindi'},
@@ -12,8 +13,9 @@ const Dropdown = ({textToTranslate,translate,visible}) => {
     ]
 
 function click(){
-    visible('none')
     Translate()
+    visible('none')
+    
 }
 
 function handleSelect(event){
@@ -36,7 +38,7 @@ function handleSelect(event){
 
   return (
     <div>
-        <select className='select-to' onChange={handleSelect}>
+        <select className='select-to' style={{marginRight:"8px",borderRadius:"5px",border:"none",padding:"3px"}} onChange={handleSelect}>
         {options.map(option=>(
             <option value={option.value}>{option.label}</option>
         ))}
