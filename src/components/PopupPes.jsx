@@ -25,12 +25,12 @@ function Popup(props) {
           </div>
         <br/>
         <br/>
-        <p>{props.response}</p>
-        <b><p>{props.contact}</p></b>
+        <p>{props.waiting?<img style={{width:"20px"}} src="loading.gif"/>:props.response}</p>
+        <p>{props.contact}</p>
         </Modal.Body>
 
-        <Modal.Footer>
-        <Button variant="primary"  onClick={props.action} >Extract</Button>          
+        <Modal.Footer>{props.response===''?<Button variant="primary"  onClick={props.action} disabled={props.waiting}>Extract</Button>:''}
+               
         </Modal.Footer>
       </Modal.Dialog>
     </div>

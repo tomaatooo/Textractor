@@ -1,0 +1,18 @@
+[{
+    "id":1,
+    "image":"ai.png",
+    "title":"AI Integrated",
+    "desc":"With the help of AI algorithms, process any image to extract the text contents from it."
+},
+{
+    "id":2,
+    "image":"doc.png",
+    "title":"Document Digitization",
+    "desc":"No need of manually typing contents from an image."
+},
+{
+    "id":3,
+    "image":"ui.png",
+    "title":"User-Friendly Interface",
+    "desc":"Simple design helps user to utilize the tools easily and efficiently."
+}]

@@ -56,7 +56,7 @@ const Home = () => {
     
     <div className="h-banner3" style={{alignContent:"center"}}>
 
-      <video style={{marginTop:"20px"}} width="auto" height="180vh" controls>
+      <video style={{marginTop:"20px"}} width="300vw" height="auto" controls>
       <source src="Home.mp4" type="video/mp4"/>
       </video>
       <div className='how-to'>

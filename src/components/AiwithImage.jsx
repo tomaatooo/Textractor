@@ -23,7 +23,7 @@ const AiwithImage = () => {
         setResponse('');
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         const result = await model.generateContent([
-            "You are a pharmacist. Just read only the medicine names from image, if no name show error message", imageInineData
+            "You are a pharmacist. Just read only the medicine names from image, if no name show 'NO MEDICINES FOUND'", imageInineData
         ]);
         const response = await result.response;
         const text = response.text();
@@ -31,7 +31,7 @@ const AiwithImage = () => {
         setLoading(false);
         
         const result1 = await model.generateContent([
-            "Read only the doctor's or physician's name from image, if not readable then do not read and return no doctor's informantion available", imageInineData
+            "Read only the doctor's or physician's full name from image, if not available return no doctor's informantion available", imageInineData
         ]);
         const response1 = await result1.response;
         const text1 = response1.text();
@@ -40,8 +40,6 @@ const AiwithImage = () => {
 
     }
 
-
-     
 
     const handleClick = () => {
         aiImageRun();
@@ -97,7 +95,7 @@ const AiwithImage = () => {
                 </div>
                 
                 {  
-                   popup===true ? <PopupPes image={image} trigger={setPopup} action={handleClick} response={aiResponse} contact={contact}></PopupPes>:""
+                   popup===true ? <PopupPes image={image} trigger={setPopup} action={handleClick} response={aiResponse} waiting={loading} contact={contact}></PopupPes>:""
                    
                 }
                 

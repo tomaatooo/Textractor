@@ -1,6 +1,8 @@
 import React from 'react'
 import './Products.css'
 import { Link } from 'react-router-dom'
+import featuredata from '../jsons/features.json'
+import Feature from '../components/FeatureBox'
 
 const Products = () => {
   return (
@@ -20,11 +22,11 @@ const Products = () => {
         <Link to="/docreader" class="btn">Try Out</Link>
         </div>
       </div>
+
+      
       <div className="body-1" >
       <img src="preader.jpg"/>
-
       <div className='over'>New!</div>
-      
         <div className="content">
         <h3>Prescription Reader</h3>
         <p>Want to order your medicines but cannot read what the doctor wrote? We got it covered.</p>
@@ -39,30 +41,14 @@ const Products = () => {
           <h3>Features of the Technology</h3>
         </div>
         <div className="features-container">
-
-          <div className="feature-1" >
-            <img src="ai.png"/>
-            <div className="content">
-              <h3>AI Integrated</h3>
-              <p>With the help of AI algorithms, process any image to extract the text contents from it.</p>
-            </div>
-          </div>
-
-          <div className="feature-1" >
-            <img src="doc.png"/>
-            <div className="content">
-              <h3>Document Digitization</h3>
-              <p>No need of manually typing contents from an image.</p>
-            </div>
-          </div>
-
-          <div className="feature-1" >
-            <img src="ui.png"/>
-            <div className="content">
-              <h3>User-Friendly Interface</h3>
-              <p>Simple design helps user to utilize the tools easily and efficiently.</p>
-            </div>
-          </div>
+        
+        
+        {featuredata.map(feature=>{
+          return(
+            <Feature image={feature.image} title={feature.title} desc={feature.desc}/> 
+          )
+        })}
+          
 
         </div>
       </div>
