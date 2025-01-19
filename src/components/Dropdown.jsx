@@ -2,6 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import Button from 'react-bootstrap/Button';
+import {db} from './firebase'
+import { addDoc,collection } from 'firebase/firestore';
+import { SignedIn, useClerk } from '@clerk/clerk-react';
+import { Link } from 'react-router-dom';
 
 const Dropdown = ({textToTranslate,translate,visible}) => {
     const [dvalue,setDvalue]=useState('Choose language')
@@ -17,6 +21,23 @@ function click(){
     visible('none')
     
 }
+
+const {user}=useClerk()
+
+
+const saveToDb=async()=>{
+await addDoc(collection(db,"User-data"),{
+  fname:user.firstName,
+  lname:user.lastName,
+  email:user.emailAddresses[0].emailAddress,
+  title:"Untitled",
+  text:textToTranslate
+})  
+console.log("success")
+
+}
+
+
 
 function handleSelect(event){
     setDvalue(event.target.value)
@@ -37,6 +58,9 @@ function handleSelect(event){
         }
 
   return (
+    <div style={{display:"flex"}}>
+        <SignedIn><Link to='/editor'><Button onClick={saveToDb}>Editor</Button></Link> </SignedIn>
+       
     <div>
         <select className='select-to' style={{marginRight:"8px",borderRadius:"5px",border:"none",padding:"3px"}} onChange={handleSelect}>
         {options.map(option=>(
@@ -45,6 +69,7 @@ function handleSelect(event){
         </select>
         <Button disabled={dvalue=='Choose language'} variant='primary' onClick={click}>Translate</Button>
        
+    </div>
     </div>
   )
 }

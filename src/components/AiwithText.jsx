@@ -95,7 +95,7 @@ const AiwithImage = () => {
                 
             </div>
                     
-              {/*code*/}
+              
         </div>
     );
 };

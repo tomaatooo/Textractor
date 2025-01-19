@@ -6,10 +6,12 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
+
 function Popup(props) {
 
   const [translated,setTranslated]=useState('');
   const [show,setShow]=useState('');
+
 
   return (
     <>
