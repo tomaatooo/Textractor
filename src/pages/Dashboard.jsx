@@ -58,9 +58,9 @@ const handleDelete = async (val) => {
 
   console.log(val)
   return (
-    <div>
-      <h1>Welcome back, {user.firstName}</h1>
-      <h4>Your past works</h4>
+    <div style={{marginTop:'10px'}}>
+      <h1 style={{color:'white',fontWeight:'700'}}>Welcome back, <span style={{color:'pink'}}>{user.firstName}</span></h1>
+      <h4 style={{color:'white'}}>Your past works</h4>
       <div style={{display:'flex',margin:"0px",flexWrap:'wrap'}}>
 
       <Link to='/docreader'>
@@ -77,7 +77,8 @@ const handleDelete = async (val) => {
       fontSize: '36px',
       opacity: '0.8', 
       color: 'grey', 
-      border: '1px solid #ccc', 
+      border: '1px solid #ccc',
+      borderRadius:'10px' 
     }}
   >
     +
@@ -88,13 +89,14 @@ const handleDelete = async (val) => {
         !loading&&
         val[0].map((value, index) => (
           <div style={{textAlign:'center'}}>
-          <div style={{background:'white',margin:'10px',height:'240px',width:'190px'}} key={index}>
-            <p style={{fontSize:'8px',textAlign:'center',alignContent:'center'}}>id:{value.id}</p>
-            <p style={{fontSize:'8px',textAlign:'center',alignContent:'center'}}>text:{value.text}</p>
-            <div style={{display:'flex',justifyContent:'center',gap:'2px'}}>
+          <div style={{background:'white',margin:'10px',height:'240px',width:'190px',borderRadius:'10px',marginBottom:'0px'}} key={index}>
+          
+          <div style={{padding:'5px',fontSize:'8px',height:'80%',overflow:'hidden'}} dangerouslySetInnerHTML={{ __html: value.text }}
+    />
+            <div style={{display:'flex',justifyContent:'center',gap:'2px',margin:'5px'}}>
               <Link to={`/view/${value.id}`}><Button>View</Button></Link>
               <Link to={`/edit/${value.id}`}><Button>Edit</Button></Link>
-              <Button onClick={()=>handleDelete(value.id)}>Delete</Button>
+              <Button style={{backgroundColor:'red'}} onClick={()=>handleDelete(value.id)}>Delete</Button>
             </div>
 
           </div>

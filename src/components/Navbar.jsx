@@ -11,21 +11,8 @@ const Navbar = () => {
     <div className="logo">
       <a href='/'><img src="logo-txt.png" alt="logo" width="100px"/></a>
     </div>
-      <ul style={{display:"flex", marginRight:"10px",gap:"20px",alignItems:'center',justifyContent:'center',marginBottom:'0px',padding:'5px'}}>
-        {/* {
-          routes.map((route, index) => {
-            console.log(route)
-            return (
-              <li className='mt-2' key={index}>
-                <NavLink className="text-decoration-none text-white" to={route.path} exact activeClassName="active">
-                  {route.name}
-                  
-                </NavLink>
-              </li>
-              
-            );
-          })
-        }  */}
+      <ul style={{display:"flex", marginRight:"10px",gap:"20px",alignItems:'center',justifyContent:'center',marginBottom:'0px'}}>
+        
         <li>
                 <NavLink className="text-decoration-none text-white" to='/' exact activeClassName="active">
                   Home
@@ -44,7 +31,7 @@ const Navbar = () => {
               
               
         <li style={{marginLeft:'0px',display:'flex'}}><SignedIn>
-          <Link to='/dashboard' ><p style={{borderRadius:'5px',padding:'3px',backgroundColor:'white',color:'black',marginRight:'10px'}}>Dashboard</p></Link><UserButton/></SignedIn>
+          <Link to='/dashboard' ><p style={{borderRadius:'5px',padding:'3px',backgroundColor:'white',color:'black',marginRight:'10px',marginBottom:"0px"}}>Dashboard</p></Link><UserButton/></SignedIn>
         <SignedOut>
         <SignInButton style={{borderRadius:'5px',fontSize:'1rem',backgroundColor:'white',color:'black',padding:'3px'}}  mode='modal' forceRedirectUrl='/dashboard' />
         </SignedOut></li>

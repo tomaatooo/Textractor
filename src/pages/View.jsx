@@ -79,13 +79,15 @@ const View = () => {
     <>
     {
       loading?'':<div style={{justifyItems:'center'}}>
-        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-        <p style={{color:'white',margin:'0px'}}>{val[0].title}</p>
+        <div style={{padding:'15px',width:'60%'}}>
+        <div style={{display:'flex',justifyContent:'space-between'}}>
+        <p style={{color:'white',margin:'0px',fontSize:'24px'}}>{val[0].title}</p>
          <Button onClick={handleDownloadPdf} style={{backgroundColor:"green"}}>Save Pdf</Button>
         
         </div>
+        </div>
         
-        <div style={{backgroundColor:'white',marginTop:'50px',height:'900px',width:'750px', marginBottom:'50px'}}>
+        <div style={{backgroundColor:'white',height:'900px',width:'750px', marginBottom:'50px'}}>
           <div ref={printRef}>
           <div style={{padding:'50px'}} dangerouslySetInnerHTML={{ __html: val[0].text }}
     />

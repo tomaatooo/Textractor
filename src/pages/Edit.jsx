@@ -1,15 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import JoditEditor from 'jodit-react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { db } from '../components/firebase'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import { Button } from 'react-bootstrap'
 
 const Edit = () => {
+  const navigate=useNavigate()
   const {id}=useParams()
   const editor=useRef(null)
   const [val,setVal]=useState()
   const [edit,setEdit]=useState('')
+  const [update,setUpdate]=useState(false)
   const[loading,setLoading]=useState(true)
 
   const config={
@@ -62,21 +64,25 @@ const Edit = () => {
           } catch (error) {
             console.error("Error updating record:", error);
           }
+          navigate('/dashboard')
         };
+
+        
 
         
 
   return (
     <>
     {!loading&&<div style={{marginTop:'10px'}}>
+      
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-        <p style={{marginBottom:'0px'}}>{val[0].title}</p>
-        <Button onClick={updateRecordFirestore}>Update</Button>
+        <p contentEditable  style={{marginBottom:'0px'}}>{val[0].title}</p>
+        <Button disabled={!update} onClick={updateRecordFirestore}>Update</Button>
       </div>
       <JoditEditor
       ref={editor}
       value={val[0].text}
-      onChange={newContent=>setEdit(newContent)}
+      onChange={newContent=>{setEdit(newContent);setUpdate(true)}}
       config={config}
       />
     </div>}

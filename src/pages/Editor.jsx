@@ -1,15 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import JoditEditor from 'jodit-react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { db } from '../components/firebase'
 import { addDoc, collection, doc, getDoc } from 'firebase/firestore'
 import { Button } from 'react-bootstrap'
 import { useClerk } from '@clerk/clerk-react'
 
 const Editor = () => {
+
+  const navigate=useNavigate()
+
   const text=useLocation().state
   const {id}=useParams()
   const editor=useRef(null)
+  
   const [val,setVal]=useState(text)
   const[title,setTitle]=useState('Untitled')
 
@@ -35,16 +39,18 @@ await addDoc(collection(db,"User-data"),{
   private:true
 })  
 console.log("success")
-
+navigate('/dashboard')
 }
 
- 
+
 
         
 
   return (
     <>
          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:'10px'}}>
+       
+       
         <span onInput={handleChange} style={{marginBottom:'0px'}} contentEditable autoFocus>{title}</span>
         
         <Button onClick={saveToDb}>Save</Button>
@@ -57,7 +63,7 @@ console.log("success")
       <JoditEditor
       ref={editor}
       value={text}
-      onChange={newContent=>setVal(newContent)}
+      onChange={(newContent) =>setVal(newContent)}
       config={config}
       />
     </div>
