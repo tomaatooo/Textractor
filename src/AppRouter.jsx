@@ -13,6 +13,8 @@ import './AppRouter.css';
 import Dashboard from './pages/Dashboard';
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
 import Editor from './pages/Editor';
+import Edit from './pages/Edit';
+import View from './pages/View';
 
 
 
@@ -34,7 +36,10 @@ const router=createBrowserRouter(
   {path:'/dashboard',component:<><SignedIn><Dashboard/></SignedIn><SignedOut><Error/></SignedOut></>},
   { path: '/docreader', component: <Docreader/> },
   { path: '/preader', component: <Preader/> },
-  {path:'/editor',component:<><SignedIn><Editor/></SignedIn><SignedOut><Error/></SignedOut></>}
+  {path:'/editor',component:<><SignedIn><Editor/></SignedIn><SignedOut><Error/></SignedOut></>},
+  {path:'/edit/:id',component:<><SignedIn><Edit/></SignedIn><SignedOut><Error/></SignedOut></>},
+  {path:'/view/:id',component:<><SignedIn><View/></SignedIn><SignedOut><Error/></SignedOut></>}
+  
 ];
 
 const AppRouter = () => {

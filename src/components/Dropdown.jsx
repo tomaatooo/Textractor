@@ -22,20 +22,7 @@ function click(){
     
 }
 
-const {user}=useClerk()
 
-
-const saveToDb=async()=>{
-await addDoc(collection(db,"User-data"),{
-  fname:user.firstName,
-  lname:user.lastName,
-  email:user.emailAddresses[0].emailAddress,
-  title:"Untitled",
-  text:textToTranslate
-})  
-console.log("success")
-
-}
 
 
 
@@ -59,7 +46,7 @@ function handleSelect(event){
 
   return (
     <div style={{display:"flex"}}>
-        <SignedIn><Link to='/editor'><Button onClick={saveToDb}>Editor</Button></Link> </SignedIn>
+        <SignedIn><Link to='/editor' state={textToTranslate}><Button>Editor</Button></Link> </SignedIn>
        
     <div>
         <select className='select-to' style={{marginRight:"8px",borderRadius:"5px",border:"none",padding:"3px"}} onChange={handleSelect}>
