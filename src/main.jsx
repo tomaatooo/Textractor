@@ -7,8 +7,6 @@ import { ClerkProvider } from '@clerk/clerk-react';
 
 const PERISHABLE_KEY=import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
-console.log(PERISHABLE_KEY)
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ClerkProvider publishableKey={PERISHABLE_KEY}>

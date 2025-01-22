@@ -56,7 +56,6 @@ const handleDelete = async (val) => {
     getData();
   },[])
 
-  console.log(val)
   return (
     <div style={{marginTop:'10px'}}>
       <h1 style={{color:'white',fontWeight:'700'}}>Welcome back, <span style={{color:'pink'}}>{user.firstName}</span></h1>
@@ -88,7 +87,7 @@ const handleDelete = async (val) => {
       {
         !loading&&
         val[0].map((value, index) => (
-          <div style={{textAlign:'center'}}>
+          <div key={index} style={{textAlign:'center'}}>
           <div style={{background:'white',margin:'10px',height:'240px',width:'190px',borderRadius:'10px',marginBottom:'0px'}} key={index}>
           
           <div style={{padding:'5px',fontSize:'8px',height:'80%',overflow:'hidden'}} dangerouslySetInnerHTML={{ __html: value.text }}

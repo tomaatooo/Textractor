@@ -50,8 +50,8 @@ function handleSelect(event){
        
     <div>
         <select className='select-to' style={{marginRight:"8px",borderRadius:"5px",border:"none",padding:"3px"}} onChange={handleSelect}>
-        {options.map(option=>(
-            <option value={option.value}>{option.label}</option>
+        {options.map((option,index)=>(
+            <option key={index} value={option.value}>{option.label}</option>
         ))}
         </select>
         <Button disabled={dvalue=='Choose language'} variant='primary' onClick={click}>Translate</Button>

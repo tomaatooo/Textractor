@@ -10,8 +10,6 @@ const Edit = () => {
   const {id}=useParams()
   const editor=useRef(null)
   const [val,setVal]=useState()
-  const [edit,setEdit]=useState('')
-  const [update,setUpdate]=useState(false)
   const[loading,setLoading]=useState(true)
 
   const config={
@@ -51,11 +49,17 @@ const Edit = () => {
                   
           
           const recordRef = doc(db, "User-data", id); 
+          const field=document.getElementById('editor')
+          const text=field.value
+
+          const field1=document.getElementById('doctitle')
+          const heading=field1.innerHTML
         
           
+          
           const newData = {
-            text:edit,
-            title: "edited",
+            text:text,
+            title: heading
           };
         
           try {
@@ -76,15 +80,22 @@ const Edit = () => {
     {!loading&&<div style={{marginTop:'10px'}}>
       
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-        <p contentEditable  style={{marginBottom:'0px'}}>{val[0].title}</p>
-        <Button disabled={!update} onClick={updateRecordFirestore}>Update</Button>
+        
+        <div style={{display:'flex',gap:'10px',alignItems:'center'}}>
+         <p contentEditable id='doctitle' style={{marginBottom:'0px',color:'white',fontSize:'24px'}}>{val[0].title}</p> 
+         <i style={{color:'white'}} class="fa-solid fa-pen-to-square"></i>
+        </div>
+        
+
+
+        <Button style={{backgroundColor:'green'}} onClick={updateRecordFirestore}>Update</Button>
       </div>
-      <JoditEditor
+      <div style={{marginTop:'10px'}}>
+      <JoditEditor id="editor"
       ref={editor}
       value={val[0].text}
-      onChange={newContent=>{setEdit(newContent);setUpdate(true)}}
       config={config}
-      />
+      /></div>
     </div>}
     </>   
     

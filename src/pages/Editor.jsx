@@ -21,21 +21,21 @@ const Editor = () => {
     height:500
   }
 
-  const handleChange = (event) => {
-    setTitle(event.target.innerText);
-    console.log(title)
-  };
-
   const {user}=useClerk()
 
 
 const saveToDb=async()=>{
+  const field=document.getElementById('editor')
+          const text=field.value
+
+          const field1=document.getElementById('doctitle')
+          const heading=field1.innerHTML
 await addDoc(collection(db,"User-data"),{
   fname:user.firstName,
   lname:user.lastName,
   email:user.emailAddresses[0].emailAddress,
-  title:title,
-  text:val,
+  title:heading,
+  text:text,
   private:true
 })  
 console.log("success")
@@ -49,11 +49,13 @@ navigate('/dashboard')
   return (
     <>
          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:'10px'}}>
-       
-       
-        <span onInput={handleChange} style={{marginBottom:'0px'}} contentEditable autoFocus>{title}</span>
         
-        <Button onClick={saveToDb}>Save</Button>
+         <div style={{display:'flex',gap:'10px',alignItems:'center'}}>
+         <p contentEditable id='doctitle' style={{marginBottom:'0px',color:'white',fontSize:'24px'}}>Untitled</p> 
+         <i style={{color:'white'}} class="fa-solid fa-pen-to-square"></i>
+        </div>
+        
+        <Button style={{backgroundColor:'green'}} onClick={saveToDb}>Save</Button>
         </div>
 
 
@@ -61,9 +63,9 @@ navigate('/dashboard')
     
     <div style={{marginTop:'10px'}}>
       <JoditEditor
+      id="editor"
       ref={editor}
       value={text}
-      onChange={(newContent) =>setVal(newContent)}
       config={config}
       />
     </div>

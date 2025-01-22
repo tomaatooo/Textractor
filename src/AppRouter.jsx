@@ -51,9 +51,9 @@ const AppRouter = () => {
       <div className='container'>
         <Routes>
           {
-            routes.map((route) => {
+            routes.map((route,index) => {
               return (
-                <Route path={route.path} exact element={route.component} />
+                <Route key={index} path={route.path} exact element={route.component} />
               );
             })
           }

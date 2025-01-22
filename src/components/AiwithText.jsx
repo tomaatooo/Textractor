@@ -38,7 +38,6 @@ const AiwithImage = () => {
         aiImageRun();
         setPlay(false)
         setNewPlay(true)
-        setBtn(true);
     }
 
     const handleImageChange = (e) => {
@@ -78,7 +77,7 @@ const AiwithImage = () => {
                 <div id="matter" style={{ display: 'flex',justifyContent:'center' }}>
                     <input type='file' accept='image/png,image/jpg,image/jpeg' id='upload' onChange={(e) => {handleImageChange(e)
                         setResponse('')
-                        setContact('');
+                        
                                         
                     }
                     } />
