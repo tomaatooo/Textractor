@@ -17,9 +17,7 @@ const Dashboard = () => {
 const handleDelete = async (val) => {
   
   try {
-    // Ensure val.id is available
-        
-    // Delete the document
+
     
     await deleteDoc(doc(db, "User-data", val));
     
@@ -59,7 +57,9 @@ const handleDelete = async (val) => {
   return (
     <div style={{marginTop:'10px'}}>
       <h1 style={{color:'white',fontWeight:'700'}}>Welcome back, <span style={{color:'pink'}}>{user.firstName}</span></h1>
-      <h4 style={{color:'white'}}>Your past works</h4>
+      <h4 style={{color:'white'}}>
+      {!loading&&val[0].length==0?'No Works':'Your past works'}
+      </h4>
       <div style={{display:'flex',margin:"0px",flexWrap:'wrap'}}>
 
       <Link to='/docreader'>

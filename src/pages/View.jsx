@@ -55,7 +55,7 @@ const View = () => {
       scale: 2,
     });
     console.log(canvas)
-    const data = canvas.toDataURL("image/png");
+    const data = canvas.toDataURL("image/jpeg",0.7);
 
     const pdf = new jsPDF({
       orientation: "portrait",
@@ -87,9 +87,9 @@ const View = () => {
         </div>
         </div>
         
-        <div style={{backgroundColor:'white',height:'900px',width:'750px', marginBottom:'50px'}}>
+        <div style={{backgroundColor:'white',height:'1100px',width:'750px', marginBottom:'50px',overflow:"hidden"}}>
           <div ref={printRef}>
-          <div style={{padding:'50px'}} dangerouslySetInnerHTML={{ __html: val[0].text }}
+          <div style={{padding:'30px'}} dangerouslySetInnerHTML={{ __html: val[0].text }}
     />
           </div>
           
