@@ -72,6 +72,7 @@
   
     .nav-links.mobile-menu-open {
       display: flex;
+      z-index: 1;
     }
   }
   

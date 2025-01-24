@@ -7,8 +7,10 @@ import { addDoc,collection } from 'firebase/firestore';
 import { SignedIn, useClerk } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
 
-const Dropdown = ({textToTranslate,translate,visible}) => {
+const Dropdown = ({textToTranslate,translate,visible,loading}) => {
     const [dvalue,setDvalue]=useState('Choose language')
+    
+
 
     const options=[
         {label:"Choose language",value:'Choose language'},
@@ -35,13 +37,15 @@ function handleSelect(event){
         const genAI = new GoogleGenerativeAI('AIzaSyBwF4HEhvpBAfINN0zPphKrPSZ_V3Xi1Kg');
 
         async function Translate() {
+                loading(true)
+                console.log(loading)
                 const model3 = genAI.getGenerativeModel({ model: "gemini-pro" });
                 const prompt = `Translate ${textToTranslate} to ${dvalue}`;
                 const result = await model3.generateContent(prompt);
                 const response = await result.response;
                 const text = response.text();
                 translate(text)
-                console.log(text)
+                loading(false)
         }
 
   return (

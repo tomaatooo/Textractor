@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { db } from '../components/firebase'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import { Button } from 'react-bootstrap'
+import { useClerk } from '@clerk/clerk-react'
 
 const Edit = () => {
   const navigate=useNavigate()
@@ -11,6 +12,7 @@ const Edit = () => {
   const editor=useRef(null)
   const [val,setVal]=useState()
   const[loading,setLoading]=useState(true)
+  const {user}=useClerk()
 
   const config={
     height:500
@@ -46,6 +48,10 @@ const Edit = () => {
 
 
         const updateRecordFirestore = async () => {
+
+          if(user.emailAddresses[0].emailAddress!=val[0].email){
+            alert("You Do Not Have Permission")
+          }else{
                   
           
           const recordRef = doc(db, "User-data", id); 
@@ -69,6 +75,7 @@ const Edit = () => {
             console.error("Error updating record:", error);
           }
           navigate('/dashboard')
+        }
         };
 
         

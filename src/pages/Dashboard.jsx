@@ -1,4 +1,4 @@
-import { collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore'
+import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { db } from '../components/firebase'
 import { useClerk } from '@clerk/clerk-react'
@@ -9,9 +9,11 @@ import { Button } from 'react-bootstrap'
 const Dashboard = () => {
 
   const { user } = useClerk()
+  
 
   const [val, setVal] = useState([])
   const [loading,setLoading]=useState(true)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
 const handleDelete = async (val) => {
@@ -30,6 +32,13 @@ const handleDelete = async (val) => {
 
   
   useEffect(() => {
+
+    
+    
+
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
     const getData = async () => {
       try {
         const q = query(
@@ -50,6 +59,7 @@ const handleDelete = async (val) => {
         console.error("Error fetching documents:", error);
       }
     };
+   
 
     getData();
   },[])
@@ -60,7 +70,15 @@ const handleDelete = async (val) => {
       <h4 style={{color:'white'}}>
       {!loading&&val[0].length==0?'No Works':'Your past works'}
       </h4>
-      <div style={{display:'flex',margin:"0px",flexWrap:'wrap'}}>
+      
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        margin: '0 auto',
+        padding: '10px', 
+        boxSizing: 'border-box',
+        justifyContent: windowWidth  >= 900 ? 'flex-start' : 'center'
+      }}>
 
       <Link to='/docreader'>
   <div

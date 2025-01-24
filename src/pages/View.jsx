@@ -87,9 +87,9 @@ const View = () => {
         </div>
         </div>
         
-        <div style={{backgroundColor:'white',height:'1100px',width:'750px', marginBottom:'50px',overflow:"hidden"}}>
+        <div style={{backgroundColor:'white',height:'1100px',width:'90%', marginBottom:'50px',overflow:"hidden"}}>
           <div ref={printRef}>
-          <div style={{padding:'30px'}} dangerouslySetInnerHTML={{ __html: val[0].text }}
+          <div style={{padding:'30px',fontSize:'1em'}} dangerouslySetInnerHTML={{ __html: val[0].text }}
     />
           </div>
           
